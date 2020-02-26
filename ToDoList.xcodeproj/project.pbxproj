@@ -13,6 +13,7 @@
 		361307802405371A001F02F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3613077E2405371A001F02F6 /* Main.storyboard */; };
 		361307822405371F001F02F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 361307812405371F001F02F6 /* Assets.xcassets */; };
 		361307852405371F001F02F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 361307832405371F001F02F6 /* LaunchScreen.storyboard */; };
+		3613078F24068D2E001F02F6 /* Part_Two.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3613078E24068D2E001F02F6 /* Part_Two.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		361307812405371F001F02F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		361307842405371F001F02F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		361307862405371F001F02F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3613078E24068D2E001F02F6 /* Part_Two.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part_Two.swift; sourceTree = "<group>"; };
+		3613079024069D63001F02F6 /* teacher_notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = teacher_notes.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				361307812405371F001F02F6 /* Assets.xcassets */,
 				361307832405371F001F02F6 /* LaunchScreen.storyboard */,
 				361307862405371F001F02F6 /* Info.plist */,
+				3613078E24068D2E001F02F6 /* Part_Two.swift */,
+				3613079024069D63001F02F6 /* teacher_notes.rtf */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3613077D2405371A001F02F6 /* SecondViewController.swift in Sources */,
+				3613078F24068D2E001F02F6 /* Part_Two.swift in Sources */,
 				361307792405371A001F02F6 /* AppDelegate.swift in Sources */,
 				3613077B2405371A001F02F6 /* FirstViewController.swift in Sources */,
 			);

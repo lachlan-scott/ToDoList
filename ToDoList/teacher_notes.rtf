@@ -1,0 +1,110 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 AvenirNext-Regular;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red255\green255\blue102;\red0\green0\blue0;
+\red92\green38\blue153;\red196\green26\blue22;\red46\green13\blue110;\red218\green128\blue52;\red63\green110\blue116;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c66500\c5200\c56900;\csgenericrgb\c100000\c100000\c40000\c5443;\csgenericrgb\c0\c0\c0;
+\csgenericrgb\c35900\c14900\c60100;\csgenericrgb\c77000\c10200\c8600;\csgenericrgb\c18100\c5200\c43100;\csgenericrgb\c85590\c50338\c20386\c77000;\csgenericrgb\c24700\c43100\c45600;
+}
+\paperw12240\paperh15840\margl1440\margr1440\vieww17780\viewh13460\viewkind0
+\deftab543
+\pard\tx543\pardeftab543\pardirnatural\partightenfactor0
+
+\f0\fs30 \cf0 Create new XCode project as TabbedView\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 In UIBuilder, drag a TableView onto FirstView\
+	set Constraints; drag a Cell into the tableview; give the cell an identifier\
+	delete boilerplate labels from First and Second views\
+	rename tabs suitably (eg. \'91To Do List\'92, \'91Add To Do\'92)\
+	right-click/cntrl-drag tableview into FirstViewController to create an outlet\
+	assign delegate and datasource\
+\
+In FirstViewController, add the UITableViewController protocols 
+\fs28 \
+\pard\tx692\pardeftab692\pardirnatural\partightenfactor0
+
+\f1 \cf2 \cb3 	class\cf4  FirstViewController: \cf5 UIViewController\cf4 , \cf5 UITableViewDelegate\cf4 , \cf5 UITableViewDataSource\cf4  \{\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs30 \cf0 \cb1 	allow XCode to add tableviewcontroller method stubs\
+\
+	create some to do list variables as an array, eg.\
+	
+\f1\fs28 \cf2 \cb3 var\cf4  tableData = [\cf6 \cb3 "Buy a bike\'94, "Cycle 5kms"\cf4 \cb3 , etc.
+\f0\fs30 \cf0 \cb1 \
+\
+	ensure the array is a global variable, outside the class definition ie. above the class definition\
+\
+	fill out method stubs; students can use Jump to Definition to review the many available table methods \
+\
+\pard\tx692\pardeftab692\pardirnatural\partightenfactor0
+
+\f1\fs28 \cf4 \cb3 	\cf2 override\cf4  \cf2 func\cf4  viewDidLoad() \{\
+		\cf2 super\cf4 .\cf7 \cb3 viewDidLoad\cf4 \cb3 ()\
+		\cf8 \cb3 // Do any additional setup after loading the view.\cf4 \cb3 \
+	\}\
+	\
+	\cf2 func\cf4  tableView(\cf2 _\cf4  tableView: \cf5 UITableView\cf4 , numberOfRowsInSection section: \cf5 Int\cf4 ) -> \cf5 Int\cf4 \
+	\{\
+		\cf2 return\cf4  \cf9 \cb3 tableData\cf4 \cb3 .\cf5 count\cf4 \
+	\}\
+	\
+	\cf2 func\cf4  tableView(\cf2 _\cf4  tableView: \cf5 UITableView\cf4 , cellForRowAt indexPath: \cf5 IndexPath\cf4 ) -> \cf5 UITableViewCell\cf4 \
+	\{\
+		\cf2 let\cf4  cell = \cf5 UITableViewCell\cf4 (style: \cf5 UITableViewCell\cf4 .\cf5 CellStyle\cf4 .\cf7 \cb3 default\cf4 \cb3 , reuseIdentifier: \cf6 \cb3 "myCell"\cf4 \cb3 )\
+		cell.\cf5 textLabel\cf4 ?.\cf5 text\cf4  = \cf9 \cb3 tableData\cf4 \cb3 [indexPath.\cf5 row\cf4 ]\
+		\cf2 return\cf4  cell\
+	\}\
+	\
+	\cf8 \cb3 // This is the simplest way to delete rows with minimum code\cf4 \cb3 \
+	\cf2 func\cf4  tableView(\cf2 _\cf4  tableView: \cf5 UITableView\cf4 , commit editingStyle: \cf5 UITableViewCell\cf4 .\cf5 EditingStyle\cf4 , forRowAt indexPath: \cf5 IndexPath\cf4 )\
+	\{\
+		\cf2 if\cf4  editingStyle == \cf5 UITableViewCell\cf4 .\cf5 EditingStyle\cf4 .\cf7 \cb3 delete\cf4 \cb3  \{\
+			\cf9 \cb3 tableData\cf4 \cb3 .\cf7 \cb3 remove\cf4 \cb3 (at: indexPath.\cf5 row\cf4 )\
+			\cf9 \cb3 myTableView\cf4 \cb3 .\cf7 \cb3 reloadData\cf4 \cb3 ()\
+		\}\
+	\}\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs30 \cf0 \cb1 \
+\'97\
+In SecondView Storyboard\
+	add a text field\
+	add a button\
+	edit them appropriately\
+	\
+	cntrl-drag elements to SecondViewController to create\
+	an outlet for the textField\
+	an action for the button\
+\
+In SecondViewController \
+	fill out the action method for the button\
+	extract the textField text\
+	push it into the tableData array\
+	clear the textField\
+\
+\pard\tx692\pardeftab692\pardirnatural\partightenfactor0
+
+\f1\fs28 \cf2 \cb3 class\cf4  SecondViewController: \cf5 UIViewController\cf4  \{\
+\
+	\cf2 @IBOutlet\cf4  \cf2 weak\cf4  \cf2 var\cf4  newItemField: \cf5 UITextField\cf4 !\
+	\
+	\
+	\cf2 @IBAction\cf4  \cf2 func\cf4  addItem(\cf2 _\cf4  sender: \cf2 Any\cf4 )\
+	\{\
+		\cf8 \cb3 // check we have some data\cf4 \cb3 \
+		\cf2 if\cf4  \cf9 \cb3 newItemField\cf4 \cb3 .\cf5 text\cf4  != \cf6 \cb3 ""\cf4 \cb3  \{\
+			\cf9 \cb3 tableData\cf4 \cb3 .\cf7 \cb3 append\cf4 \cb3 (\cf9 \cb3 newItemField\cf4 \cb3 .\cf5 text\cf4 !)\
+			\cf8 \cb3 // reset the field\cf4 \cb3 \
+			\cf9 \cb3 newItemField\cf4 \cb3 .\cf5 text\cf4  = \cf6 \cb3 ""\cf4 \cb3 \
+		\}\
+	\}
+\f0\fs30 \cf0 \cb1 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+\
+\
+\pard\tx543\pardeftab543\pardirnatural\partightenfactor0
+\cf0 \
+}
