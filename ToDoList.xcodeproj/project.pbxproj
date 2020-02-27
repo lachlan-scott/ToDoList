@@ -27,6 +27,7 @@
 		361307862405371F001F02F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3613078E24068D2E001F02F6 /* Part_Two.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part_Two.swift; sourceTree = "<group>"; };
 		3613079024069D63001F02F6 /* teacher_notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = teacher_notes.rtf; sourceTree = "<group>"; };
+		361307912407AA02001F02F6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 				361307862405371F001F02F6 /* Info.plist */,
 				3613078E24068D2E001F02F6 /* Part_Two.swift */,
 				3613079024069D63001F02F6 /* teacher_notes.rtf */,
+				361307912407AA02001F02F6 /* README.md */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
