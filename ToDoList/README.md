@@ -11,7 +11,7 @@ assign delegate and datasource
 
 1. In FirstViewController, add the UITableViewController protocols 
 ```Swift
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {...\
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {...```
 
 allow XCode to add tableviewcontroller method stubs
 
